@@ -1,5 +1,5 @@
 $job = Start-Job -ScriptBlock {
-    idf.py monitor -p COM9
+    ninja monitor
 }
 
 # Đợi 30 giây
