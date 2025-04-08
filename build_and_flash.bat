@@ -10,5 +10,4 @@ set ESPPORT=COM9
 set ESPBAUD=460800
 ninja flash
 set ESPBAUD=115200
-ninja monitor
 pytest -s ../../test_uart.py
