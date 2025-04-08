@@ -10,4 +10,4 @@ set ESPPORT=COM9
 set ESPBAUD=460800
 ninja flash
 set ESPBAUD=115200
-powershell -ExecutionPolicy Bypass -File "../../monitor.ps1"
+idf.py monitor
