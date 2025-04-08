@@ -1,10 +1,14 @@
-$proc = Start-Process "idf.py" -ArgumentList "monitor -p COM9" -PassThru
-$timeout = 30
-$pid = $proc.Id
-
-try {
-    Wait-Process -Id $pid -Timeout $timeout
-} catch {
-    # Nếu quá timeout mà vẫn chạy, thì dừng lại
-    Stop-Process -Id $pid -Force
+$job = Start-Job -ScriptBlock {
+    idf.py monitor -p COM9
 }
+
+# Đợi 30 giây
+Start-Sleep -Seconds 30
+
+# Nếu job vẫn đang chạy, dừng lại
+if (Get-Job -Id $job.Id | Where-Object { $_.State -eq "Running" }) {
+    Stop-Job -Id $job.Id -Force
+}
+
+# Xoá job để giải phóng tài nguyên
+Remove-Job -Id $job.Id
