@@ -10,4 +10,4 @@ set ESPPORT=COM9
 set ESPBAUD=460800
 ninja flash
 set ESPBAUD=115200
-idf.py monitor
+ninja monitor
