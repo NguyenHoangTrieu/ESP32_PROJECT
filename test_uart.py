@@ -26,7 +26,7 @@ def uart_com9():
 def test_uart_com9_only(uart_com9):
     """Read and print data from COM9 for 20 seconds without timestamp."""
     start_time = time.time()
-    timeout = 20  # seconds
+    timeout = 60  # seconds
 
     buffer = ""
     last_rx_time = time.time()
