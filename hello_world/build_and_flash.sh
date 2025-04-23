@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod +x /home/npvinh/esp/esp-idf/export.sh
 export EXPORT_ENV="/home/npvinh/esp/esp-idf/export.sh"
 source "$EXPORT_ENV"
 if [ -f "$EXPORT_ENV" ]; then
