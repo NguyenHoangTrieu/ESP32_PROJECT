@@ -1,4 +1,3 @@
-source ~/.profile
 source "$EXPORT_ENV"
 # Check if the environment variable is set
 if [ -z "$EXPORT_ENV" ]; then
