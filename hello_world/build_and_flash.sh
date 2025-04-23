@@ -1,8 +1,10 @@
 #!/bin/bash
+export EXPORT_ENV="$HOME/esp/esp-idf/export.sh"
 source "$EXPORT_ENV"
-# Check if the environment variable is set
-if [ -z "$EXPORT_ENV" ]; then
-    echo "Error: EXPORT_ENV is not set."
+if [ -f "$EXPORT_ENV" ]; then
+    source "$EXPORT_ENV"
+else
+    echo "ESP-IDF export script not found at $EXPORT_ENV"
     exit 1
 fi
 rm -rf build
