@@ -1,5 +1,4 @@
-export EXPORT_ENV="$HOME/esp/esp-idf/export.sh"
-source "$EXPORT_ENV"
+source ~/esp/esp-idf/export.sh
 rm -rf build
 mkdir build
 cd build
